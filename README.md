@@ -79,7 +79,9 @@ Handling **Black** and **white**  as special color in the HSV space.
   ```
 
 Finally, define the color distance between two points as follow :  
+![](https://ws4.sinaimg.cn/large/006tNc79gy1fk2dyr7gesj319y0mwn14.jpg)
 
+<script>
 $$ a_i=\left\{\begin{array}{rcl}0       &      & {v_i      <      25\%}\\2     &      & {v_i > 75\% \ and \ s_i < 20\%}\\1     &      & {other}\\\end{array}\right. $$ 
 
 $$ h_{ij}=\left \{ \begin{array}{rcl}|tag_i - tag_j| * |h_i - h_j|       &    & {|tag_i - tag_j|      <      10 \ and \ |h_i - h_j| < 180}\\(20 - |tag_i - tag_j|) * |h_i - h_j|     &      & {|tag_i - tag_j| > 10 \ and \ |h_i - h_j| < 180}\\|tag_i - tag_j| * (360 -  |h_i - h_j|)    &      & {|tag_i - tag_j| < 10 \ and \ |h_i - h_j| > 180}\\(20 - |tag_i - tag_j|) * (360 - |h_i - h_j|)       &    & {|tag_i - tag_j|      >      10 \ and \ |h_i - h_j| > 180}\\\end{array}\right. $$ 
@@ -87,6 +89,7 @@ $$ h_{ij}=\left \{ \begin{array}{rcl}|tag_i - tag_j| * |h_i - h_j|       &    & 
 $$s_i = |flag_i - flag_j|$$
 
 $$ D_{ij}=\left \{ \begin{array}{rcl}10.2 * |mark_i - mark_j| * h_{ij}       &    & {a_i = 0 \ and \ a_j = 0}\\ |mark_i - mark_j|     &      & {a_i = 2 \ and \ a_j = 2}\\16.2 * h_{ij}  +1.9 * s_{ij} + 300 * |a_i - a_j|     &      & {|a_i - a_j| = 2 }\\0.22 * h_{ij}  + s_{ij} + 2.2 * |mark_i - mark_j|       &    & {a_i  = 0 \ or \ a_j = 0}\\0.22 * h_{ij}  + s_{ij} + |mark_i - mark_j|       &    & {a_i  = 2 \ or \ a_j = 2}\\ h_{ij}  + s_{ij} + |mark_i - mark_j| && {a_i = 1 \ and \ a_j = 1}\end{array}\right. $$ 
+</script>
 
 
 
