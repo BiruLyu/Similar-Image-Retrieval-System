@@ -106,7 +106,7 @@ The above definition of color distance have intuitional alignment with human eye
 
 **However, the number of pictures in the picture library is really small, the selection of the hue factor and the saturation factor in the definition of the color distance is limited, and the robustness of the system is not enough.**
 
-#<a name = "user-interface-design"></a>User Interface Design
+# <a name = "user-interface-design"></a>User Interface Design
 
 Used C# to develop a winform application to provide user responsive interface.
 
